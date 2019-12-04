@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
+  devtool: "source-map",
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
@@ -21,14 +22,19 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/index.html",
       inject: true
-    }),
-    new CleanWebpackPlugin()
+    })
   ]
 };
