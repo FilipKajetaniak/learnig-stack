@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
+  mode: "development",
   devtool: "source-map",
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
