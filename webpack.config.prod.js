@@ -3,12 +3,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const base = require("./webpack.config.base");
-const merge = require("webpack-merge");
 const path = require("path");
 
-module.exports = merge(base, {
+module.exports = {
   mode: "production",
+  entry: "./src/index.tsx",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "main.[contentHash].js"
@@ -78,4 +80,4 @@ module.exports = merge(base, {
       })
     ]
   }
-});
+};
