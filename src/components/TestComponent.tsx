@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
-import "./TestComponent.scss";
+import style from "./TestComponent.module.scss";
 
-export const TestComponent: FC = () => <h1>Hello world!</h1>;
+export const TestComponent: FC = () => (
+  <h1 className={style.hello}>Hello world!</h1>
+);

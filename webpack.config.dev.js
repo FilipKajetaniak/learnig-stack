@@ -19,7 +19,24 @@ module.exports = merge(base, {
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+        use: [
+          "style-loader",
+          "css-modules-typescript-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              sourceMap: true,
+              modules: {
+                mode: "local",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                context: path.resolve(__dirname, "src")
+              }
+            }
+          },
+          "postcss-loader",
+          "sass-loader"
+        ]
       },
       {
         enforce: "pre",

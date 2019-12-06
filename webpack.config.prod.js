@@ -29,7 +29,18 @@ module.exports = merge(base, {
               hmr: process.env.NODE_ENV === "development"
             }
           },
-          "css-loader",
+          "css-modules-typescript-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: "local",
+                localIdentName: "[local]--[hash:base64]",
+                context: path.resolve(__dirname, "src")
+              }
+            }
+          },
           "postcss-loader",
           "sass-loader"
         ]
@@ -47,7 +58,7 @@ module.exports = merge(base, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "[name].[contentHash].css",
       chunkFilename: "[id].css"
     }),
     new CleanWebpackPlugin()
