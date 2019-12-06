@@ -10,6 +10,28 @@ module.exports = merge(base, {
     contentBase: path.join(__dirname, "dist"),
     port: 3000
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        include: path.resolve(__dirname, "src")
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      }
+    ]
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "main.js"

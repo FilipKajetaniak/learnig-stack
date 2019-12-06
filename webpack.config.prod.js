@@ -13,8 +13,43 @@ module.exports = merge(base, {
     path: path.join(__dirname, "dist"),
     filename: "main.[contentHash].js"
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        include: path.resolve(__dirname, "src")
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === "development"
+            }
+          },
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      }
+    ]
+  },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new CleanWebpackPlugin()
   ],
   optimization: {
