@@ -6,6 +6,10 @@ const merge = require("webpack-merge");
 module.exports = merge(base, {
   mode: "development",
   devtool: "source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    port: 3000
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "main.js"

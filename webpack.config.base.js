@@ -20,6 +20,10 @@ module.exports = {
         enforce: "pre",
         test: /\.js$/,
         loader: "source-map-loader"
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
       }
     ]
   }
