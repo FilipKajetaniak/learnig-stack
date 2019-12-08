@@ -7,8 +7,8 @@ import { Editor } from "./Editor/Editor";
 const App: FC = () => (
   <Router>
     <Switch>
-      <Route path="/app" component={Editor} />
-      <Route path="/" component={Home} />
+      <Route path="/app" exact component={Editor} />
+      <Route path="/" exact component={Home} />
     </Switch>
   </Router>
 );
