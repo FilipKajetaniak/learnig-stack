@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { TestComponent } from "./components/TestComponent";
+import App from "./views/App";
 
-ReactDOM.render(<TestComponent />, document.querySelector("#app"));
+ReactDOM.render(<App />, document.querySelector("#app"));
