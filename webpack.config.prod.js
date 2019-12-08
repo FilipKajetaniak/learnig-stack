@@ -13,7 +13,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "main.[contentHash].js"
+    filename: "main.[contentHash].js",
+    publicPath: "/"
   },
   module: {
     rules: [

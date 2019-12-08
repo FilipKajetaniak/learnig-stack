@@ -5,12 +5,18 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   entry: "./src/index.tsx",
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "main.js",
+    publicPath: "/"
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -50,10 +56,6 @@ module.exports = {
         use: ["html-loader"]
       }
     ]
-  },
-  output: {
-    path: path.join(__dirname, "dist"),
-    filename: "main.js"
   },
   plugins: [
     new HTMLWebpackPlugin({
