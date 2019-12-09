@@ -1,18 +1,11 @@
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const merge = require("webpack-merge");
+const base = require("./webpack.config.base");
 
-module.exports = {
+module.exports = merge(base, {
   mode: "development",
   devtool: "source-map",
-  entry: "./src/index.tsx",
-  output: {
-    path: path.join(__dirname, "dist"),
-    filename: "main.js",
-    publicPath: "/"
-  },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"]
-  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 3000,
@@ -63,4 +56,4 @@ module.exports = {
       inject: true
     })
   ]
-};
+});
