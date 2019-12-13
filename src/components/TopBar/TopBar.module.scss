@@ -1,11 +1,10 @@
+@import "~styles/variables";
+
 .topBar {
   composes: navbar navbar-light bg-light from global;
 }
 
 .header {
   composes: navbar-brand mb-0 h1 from global;
-}
-
-.button {
-  composes: btn btn-secondary from global;
+  color: pink;
 }

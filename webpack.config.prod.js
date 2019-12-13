@@ -25,16 +25,12 @@ module.exports = merge(base, {
               hmr: process.env.NODE_ENV === "development"
             }
           },
-          "css-modules-typescript-loader",
           {
-            loader: "css-loader",
+            loader: "typings-for-css-modules-loader",
             options: {
-              importLoaders: 1,
-              modules: {
-                mode: "local",
-                localIdentName: "[local]--[hash:base64]",
-                context: path.resolve(__dirname, "src")
-              }
+              modules: true,
+              namedExport: true,
+              camelCase: true
             }
           },
           "postcss-loader",

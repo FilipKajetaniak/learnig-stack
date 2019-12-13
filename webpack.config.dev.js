@@ -23,19 +23,11 @@ module.exports = merge(base, {
         use: [
           "style-loader",
           {
-            loader: "css-modules-typescript-loader",
-            options: { mode: "emit" }
-          },
-          {
-            loader: "css-loader",
+            loader: "typings-for-css-modules-loader",
             options: {
-              importLoaders: 1,
-              sourceMap: true,
-              modules: {
-                mode: "local",
-                localIdentName: "[path][name]__[local]--[hash:base64:5]",
-                context: path.resolve(__dirname, "src")
-              }
+              modules: true,
+              namedExport: true,
+              camelCase: true
             }
           },
           "postcss-loader",

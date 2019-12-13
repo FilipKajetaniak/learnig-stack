@@ -4,7 +4,6 @@ import style from "./TopBar.module.scss";
 
 export const TopBar: FC = () => (
   <nav className={style.topBar}>
-    <span className={style.header}>Navbar</span>
-    <button className={style.button}>Click</button>
+    <span className={style.header}>Harpia</span>
   </nav>
 );
