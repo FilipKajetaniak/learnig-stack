@@ -24,6 +24,6 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
-    alias: createAliases(["components", "store", "views", "utils"])
+    alias: createAliases()
   }
 };

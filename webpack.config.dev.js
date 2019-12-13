@@ -19,10 +19,13 @@ module.exports = merge(base, {
         include: path.resolve(__dirname, "src")
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           "style-loader",
-          "css-modules-typescript-loader",
+          {
+            loader: "css-modules-typescript-loader",
+            options: { mode: "emit" }
+          },
           {
             loader: "css-loader",
             options: {
@@ -37,7 +40,13 @@ module.exports = merge(base, {
           },
           "postcss-loader",
           "sass-loader"
-        ]
+        ],
+        include: /\.module\.(sa|sc|c)ss$/
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        exclude: /\.module\.(sa|sc|c)ss$/
       },
       {
         enforce: "pre",
