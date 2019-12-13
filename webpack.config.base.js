@@ -1,13 +1,19 @@
 const path = require("path");
+const { readdirSync } = require("fs");
 
-const createAliases = folders =>
-  folders.reduce(
-    (aliases, currentAlias) => ({
-      ...aliases,
-      [currentAlias]: path.resolve(__dirname, `./src/${currentAlias}`)
-    }),
-    {}
-  );
+// Read all directories inside ./src and create
+// object with aliases pointing to these directories
+const createAliases = () =>
+  readdirSync("./src", { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+    .reduce(
+      (aliases, currentAlias) => ({
+        ...aliases,
+        [currentAlias]: path.resolve(__dirname, `./src/${currentAlias}`)
+      }),
+      {}
+    );
 
 module.exports = {
   entry: "./src/index.tsx",
