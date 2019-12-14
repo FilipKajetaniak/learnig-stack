@@ -2,3 +2,22 @@
 @import "~bootstrap/scss/variables";
 
 $font: "Lexend Deca", sans-serif;
+
+// $pink: #ff9cd6;
+// $eggshell: #fffbcb;
+// $lily: #e99fd1;
+
+$salmon: #ffa69c;
+$lightgreen: #e1ffc9;
+$darksalmon: #e09793;
+$dark: #002e33;
+
+// $gradient: linear-gradient(to right, $salmon 0%, $lightgreen 20%, white 60%);
+
+$gradient: linear-gradient(
+  to right,
+  $salmon 0%,
+  $lightgreen 20%,
+  white 60%,
+  $darksalmon 120%
+);

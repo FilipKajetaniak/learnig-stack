@@ -1,0 +1,11 @@
+@import "~styles/variables";
+
+.container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 400px;
+  background: $gradient;
+  border-left: 2px solid $dark;
+}

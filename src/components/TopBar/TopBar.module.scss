@@ -3,10 +3,10 @@
 .topBar {
   height: 50px;
   width: 100%;
-  background-color: gray;
+  line-height: 50px;
 }
 
 .header {
-  composes: navbar-brand mb-0 h1 from global;
-  color: pink;
+  color: black;
+  font-size: 1.2em;
 }
