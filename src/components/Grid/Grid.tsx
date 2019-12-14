@@ -1,3 +1,5 @@
 import React, { FC } from "react";
 
-export const Grid: FC = () => <main>Grid</main>;
+import style from "./Grid.module.scss";
+
+export const Grid: FC = () => <main className={style.container}>Grid</main>;
