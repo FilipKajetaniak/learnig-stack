@@ -25,3 +25,11 @@ $gradient: linear-gradient(
   white 60%,
   $darksalmon 120%
 );
+
+$gradient-vertical: linear-gradient(
+  to top,
+  $salmon 0%,
+  $lightgreen 20%,
+  white 60%,
+  $darksalmon 120%
+);

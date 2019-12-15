@@ -23,22 +23,22 @@ export const Dropdown: FC = () => {
         {selectedOption}
       </button>
       {isOpen && (
-        <SlideTransition duration={100}>
-          <ul className={style.list}>
-            {options
-              .filter(option => option !== selectedOption)
-              .map(option => (
-                <li
-                  data-value={option}
-                  key={option}
-                  onClick={selectOption}
-                  className={style.listItem}
-                >
-                  {option}
-                </li>
-              ))}
-          </ul>
-        </SlideTransition>
+        // <SlideTransition duration={100}>
+        <ul className={style.list}>
+          {options
+            .filter(option => option !== selectedOption)
+            .map(option => (
+              <li
+                data-value={option}
+                key={option}
+                onClick={selectOption}
+                className={style.listItem}
+              >
+                {option}
+              </li>
+            ))}
+        </ul>
+        // </SlideTransition>
       )}
     </div>
   );

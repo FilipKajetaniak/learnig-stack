@@ -1,7 +1,9 @@
+@import "~styles/variables";
+
 .content {
 }
 
 .wrapper {
   overflow: hidden;
-  //   border: 1px solid red;
+  background: $gradient-vertical;
 }
