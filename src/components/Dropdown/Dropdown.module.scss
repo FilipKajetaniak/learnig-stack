@@ -1,0 +1,30 @@
+@import "~styles/variables";
+
+.wrapper {
+  width: auto;
+  min-width: 40px;
+  display: inline-block;
+  text-align: center;
+  border: $border;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.listItem {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: $dark;
+  &:hover {
+    color: $salmon;
+  }
+}
+.button {
+  composes: listItem;
+  width: 100%;
+}
