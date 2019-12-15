@@ -2,11 +2,23 @@
 
 .topBar {
   height: 50px;
+  padding: 5px 0;
   width: 100%;
-  line-height: 50px;
 }
 
 .header {
-  color: black;
+  color: $dark;
   font-size: 1.2em;
+  height: 100%;
+  line-height: 50px;
+  display: block;
+  width: 100px;
+  display: none;
+}
+
+.buttonsWrapper {
+  // margin-left: 20px;
+  button {
+    margin-right: 5px;
+  }
 }

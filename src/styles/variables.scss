@@ -10,7 +10,10 @@ $font: "Lexend Deca", sans-serif;
 $salmon: #ffa69c;
 $lightgreen: #e1ffc9;
 $darksalmon: #e09793;
-$dark: #002e33;
+// $dark: #004b53;
+$dark: black;
+
+$border: 2px solid $dark;
 
 // $gradient: linear-gradient(to right, $salmon 0%, $lightgreen 20%, white 60%);
 

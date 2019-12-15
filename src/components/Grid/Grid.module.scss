@@ -1,6 +1,10 @@
+@import "~styles/variables";
+
 .container {
-  height: calc(100% - 80px);
-  border: 2px solid black;
-  background-color: #60ffa0;
+  height: calc(100% - 100px);
+  border: $border;
+  background-color: #d3d3d3;
   position: relative;
+  overflow: hidden;
+  // border-radius: 7px;
 }
