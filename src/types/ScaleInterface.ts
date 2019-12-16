@@ -3,7 +3,7 @@ import { Scale } from "./Scale";
 import { Octave } from "./Octave";
 
 export interface ScaleInterface {
-  scale: Scale;
+  scale: string;
   octave: Octave;
   rootNote: Note;
 }

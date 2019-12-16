@@ -1536,3 +1536,4 @@ export const textBreak: string;
 export const textReset: string;
 export const visible: string;
 export const invisible: string;
+export const app: string;

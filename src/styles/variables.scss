@@ -3,33 +3,5 @@
 
 $font: "Lexend Deca", sans-serif;
 
-// $pink: #ff9cd6;
-// $eggshell: #fffbcb;
-// $lily: #e99fd1;
-
-$salmon: #ffa69c;
-$lightgreen: #e1ffc9;
-$darksalmon: #e09793;
-// $dark: #004b53;
-$dark: black;
-
-$border: 2px solid $dark;
-$border-hover: 1px solid black, 1px solid $salmon;
-
-// $gradient: linear-gradient(to right, $salmon 0%, $lightgreen 20%, white 60%);
-
-$gradient: linear-gradient(
-  to right,
-  $salmon 0%,
-  $lightgreen 20%,
-  white 60%,
-  $darksalmon 120%
-);
-
-$gradient-vertical: linear-gradient(
-  to top,
-  $salmon 0%,
-  $lightgreen 20%,
-  white 60%,
-  $darksalmon 120%
-);
+$main: #ff99d6;
+$secondary: #99e7ff;

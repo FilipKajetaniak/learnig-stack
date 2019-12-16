@@ -1,3 +1,3 @@
 export const topBar: string;
 export const header: string;
-export const buttonsWrapper: string;
+export const dropdown: string;

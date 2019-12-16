@@ -7,7 +7,7 @@ import {
 } from "./actions";
 
 const initialState: ScaleInterface = {
-  scale: "Major",
+  scale: "cMajor",
   octave: 3,
   rootNote: "c"
 };

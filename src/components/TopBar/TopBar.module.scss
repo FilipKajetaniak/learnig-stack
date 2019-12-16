@@ -1,24 +1,28 @@
 @import "~styles/variables";
 
 .topBar {
-  height: 50px;
-  padding: 5px 0;
   width: 100%;
+  height: 50px;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 2px 4px 0px $secondary;
+  background-color: white;
+  vertical-align: middle;
 }
 
 .header {
-  color: $dark;
-  font-size: 1.2em;
+  color: $secondary;
+  display: block;
+  font-size: 1.3em;
   height: 100%;
   line-height: 50px;
-  display: block;
-  width: 100px;
-  display: none;
+  float: left;
 }
 
-.buttonsWrapper {
-  // margin-left: 20px;
-  button {
-    margin-right: 5px;
-  }
+.dropdown {
+  display: block;
+  margin-left: 80px;
+  margin-top: 14px;
 }

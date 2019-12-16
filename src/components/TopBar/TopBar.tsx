@@ -1,18 +1,13 @@
 import React, { FC } from "react";
 
-import { RootNoteDropdown } from "components/RootNoteDropdown/RootNoteDropdown";
-import { ScaleDropdown } from "components/ScaleDropdown/ScaleDropdown";
-import { OctaveDropdown } from "components/OctaveDropdown/OctaveDropdown";
-
 import style from "./TopBar.module.scss";
+import { ScaleDropdown } from "components/ScaleDropdown/ScaleDropdown";
 
-export const TopBar: FC = () => (
-  <nav className={style.topBar}>
-    <span className={style.header}>Harpia</span>
-    <div className={style.buttonsWrapper}>
-      <RootNoteDropdown />
-      <ScaleDropdown />
-      <OctaveDropdown />
-    </div>
-  </nav>
-);
+export const TopBar: FC = () => {
+  return (
+    <nav className={style.topBar}>
+      <h1 className={style.header}>Harpia</h1>{" "}
+      <ScaleDropdown className={style.dropdown} />
+    </nav>
+  );
+};
