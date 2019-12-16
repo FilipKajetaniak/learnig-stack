@@ -2,9 +2,9 @@ import { AudioNote } from "types/AudioNote";
 import { notes } from "./notes/notesList";
 import { NoteFile } from "types/NoteFile";
 
-const createAudioElement = (note: Note) => {
+const createAudioElement = (note: NoteFile) => {
   const audioElement = document.createElement("audio");
-  audioElement.src = require(`./notes/${note}.wav`);
+  audioElement.src = require(`./notes/${note}.wav`).default;
   audioElement.setAttribute("preload", "auto");
   audioElement.setAttribute("controls", "none");
   audioElement.style.display = "none";
