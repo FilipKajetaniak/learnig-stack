@@ -1,7 +1,11 @@
-import { createStore, Action } from "redux";
+import { createStore, combineReducers } from "redux";
+import scaleReducer from "./scale/reducers";
+import chordsReducer from "./chords/reducers";
 
-const rootReducer = (state: any = {}, actions: Action<any>) => state;
-
+const rootReducer = combineReducers({
+  scale: scaleReducer,
+  chords: chordsReducer
+});
 const store = createStore(rootReducer);
 
 export default store;
