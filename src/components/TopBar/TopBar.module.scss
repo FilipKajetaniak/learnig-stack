@@ -7,9 +7,22 @@
   position: fixed;
   top: 0;
   left: 0;
-  line-height: 50px;
   box-shadow: 0px 2px 4px 0px $secondary;
-  color: $secondary;
-  font-size: 1.3em;
   background-color: white;
+  vertical-align: middle;
+}
+
+.header {
+  color: $secondary;
+  display: block;
+  font-size: 1.3em;
+  height: 100%;
+  line-height: 50px;
+  float: left;
+}
+
+.dropdown {
+  display: block;
+  margin-left: 80px;
+  margin-top: 14px;
 }

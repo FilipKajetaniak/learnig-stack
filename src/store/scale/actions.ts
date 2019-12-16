@@ -8,7 +8,7 @@ export const CHANGE_OCTAVE = "CHANGE_OCTAVE";
 
 export interface ChangeScaleAction {
   type: typeof CHANGE_SCALE;
-  scale: Scale;
+  scale: string;
 }
 
 export interface ChangeNoteAction {

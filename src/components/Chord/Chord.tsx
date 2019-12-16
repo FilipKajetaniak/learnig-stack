@@ -1,4 +1,5 @@
 import React, { FC, MouseEvent, useState, useContext, useRef } from "react";
+import { useSelector } from "react-redux";
 
 import { soundbankContext } from "containers/SoundbankContext";
 import Scale from "scales/Scale";
@@ -10,10 +11,9 @@ interface ChordProps {
   voicing: number[];
 }
 
-const selectedScale = scales.eMinor;
-const scale = new Scale(selectedScale);
-
 export const ChordComponent: FC<ChordProps> = ({ voicing }) => {
+  const selectedScale = useSelector((state: any) => state.scale.scale);
+  const scale = new Scale(scales[selectedScale as "cMajor" | "eMinor"]);
   const [step, setStep] = useState(1);
   const [offsetTop, setOffsetTop] = useState(50);
   const [octave, setOctave] = useState(4);

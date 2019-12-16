@@ -8,7 +8,7 @@ import { Scale } from "types/Scale";
 import { Note } from "types/Note";
 import { Octave } from "types/Octave";
 
-export const changeScale = (scale: Scale): ScaleActions => ({
+export const changeScale = (scale: string): ScaleActions => ({
   type: CHANGE_SCALE,
   scale
 });
