@@ -3,17 +3,25 @@ import React, { FC, useState, MouseEvent } from "react";
 import style from "./Dropdown.module.scss";
 import { SlideTransition } from "components/SlideTransition/SlideTransition";
 
-const options: string[] = ["1", "2", "3", "4", "5", "6"];
+interface DropdownProps {
+  options: string[];
+  onChange: (value: string) => void;
+  selectedOption: string;
+}
 
-export const Dropdown: FC = () => {
+export const Dropdown: FC<DropdownProps> = ({
+  options,
+  selectedOption,
+  onChange
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("3");
+
   const selectOption = (event: MouseEvent<HTMLLIElement>) => {
     const value = event.currentTarget.dataset.value;
     if (!value) {
       return;
     }
-    setSelectedOption(value);
+    onChange(value);
     setIsOpen(false);
   };
   const toggleDropdownVisibility = () => setIsOpen(!isOpen);
