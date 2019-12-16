@@ -1,3 +1,3 @@
-import { Note } from "./Note";
+import { NoteFile } from "./NoteFile";
 
-export type AudioNote = { [key in Note]: HTMLAudioElement };
+export type AudioNote = { [key in NoteFile]: HTMLAudioElement };

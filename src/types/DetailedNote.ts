@@ -1,7 +1,7 @@
-import { Note } from "./Note";
+import { NoteFile } from "./NoteFile";
 
 export interface DetailedNote {
-  note: Note;
+  note: NoteFile;
   octave: number;
   step: number;
 }

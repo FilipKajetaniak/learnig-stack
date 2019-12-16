@@ -1,7 +1,7 @@
-import { Note } from "types/Note";
-import { notes as allNotes } from "constants/notes";
+import { NoteFile } from "types/NoteFile";
+import { notes as allNotes } from "soundbank/notes/notesList";
 import { DetailedNote } from "types/DetailedNote";
-
+File;
 const removeOctave = (note: string): string =>
   note.substring(0, note.length - 1);
 
@@ -26,12 +26,12 @@ export default class Scale {
     octave: number,
     step: number,
     voicing: number[]
-  ): Note[] => {
+  ): NoteFile[] => {
     const chordRoot = this.notes.find(
       note => note.octave === octave && note.step === step
     );
     if (chordRoot) {
-      let notes: Note[] = [];
+      let notes: NoteFile[] = [];
       for (let i = 0; i < voicing.length; i++) {
         const range = this.notes.indexOf(chordRoot) + voicing[i] - 1;
         notes.push(this.notes.slice(range, range + 1)[0].note);
@@ -51,7 +51,7 @@ export default class Scale {
     if (firstRootNote) {
       // removing notes before root note so scale starts at root note
       const fistRootNoteIndex = this.notes.indexOf(firstRootNote);
-      const notesFromLowerOctave: Note[] = [];
+      const notesFromLowerOctave: NoteFile[] = [];
       // iterating through first octave of notes to find notes with offset octave
       this.notes
         .slice(fistRootNoteIndex, fistRootNoteIndex + scale.length)

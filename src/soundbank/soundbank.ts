@@ -1,6 +1,6 @@
-import { Note } from "types/Note";
 import { AudioNote } from "types/AudioNote";
-import { notes } from "constants/notes";
+import { notes } from "./notes/notesList";
+import { NoteFile } from "types/NoteFile";
 
 const createAudioElement = (note: Note) => {
   const audioElement = document.createElement("audio");
@@ -15,7 +15,7 @@ const createAudioElement = (note: Note) => {
 export default class Soundbank {
   constructor() {
     this.notes = notes.reduce(
-      (object: any, note: Note) =>
+      (object: any, note: NoteFile) =>
         (object = {
           ...object,
           [note]: createAudioElement(note)
@@ -26,13 +26,13 @@ export default class Soundbank {
 
   private notes: AudioNote;
 
-  readonly play = (notes: Note[]) => {
+  readonly play = (notes: NoteFile[]) => {
     notes.forEach(note => {
       this.notes[note].play();
     });
   };
 
-  readonly stop = (notes: Note[]) => {
+  readonly stop = (notes: NoteFile[]) => {
     notes.forEach(note => {
       this.notes[note].pause();
       this.notes[note].currentTime = 0;

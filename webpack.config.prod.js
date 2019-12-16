@@ -38,6 +38,13 @@ module.exports = merge(base, {
         ]
       },
       {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]"
+        }
+      },
+      {
         enforce: "pre",
         test: /\.js$/,
         loader: "source-map-loader"
