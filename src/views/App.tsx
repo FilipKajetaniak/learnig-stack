@@ -1,16 +1,15 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import { Home } from "./Home/Home";
-import { Editor } from "./Editor/Editor";
+import { Grid } from "components/Grid/Grid";
+import { TopBar } from "components/TopBar/TopBar";
+import store from "store/store";
 
 const App: FC = () => (
-  <Router>
-    <Switch>
-      <Route path="/app" exact component={Editor} />
-      <Route path="/" exact component={Home} />
-    </Switch>
-  </Router>
+  <Provider store={store}>
+    <TopBar />
+    <Grid />
+  </Provider>
 );
 
 export default App;

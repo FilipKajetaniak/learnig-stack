@@ -1,5 +1,15 @@
+@import "~sass/variables";
+
 .column {
+  height: inherit;
   width: 100px;
-  height: 100%;
-  background-color: red;
+  float: left;
+  position: relative;
+  &:hover {
+    .chord-slider,
+    .octave-marker,
+    .step-marker {
+      opacity: 1;
+    }
+  }
 }

@@ -1,0 +1,45 @@
+@import "~sass/variables";
+
+.columnMarkers {
+  width: 100%;
+  height: 100%;
+  .octaveMarker {
+    width: 20px;
+    margin: 0 auto;
+    border-bottom: 1px solid $secondary;
+    border-top: 1px solid $secondary;
+    transition: opacity 100ms ease-in;
+    opacity: 0;
+    &:first-child {
+      border-top: 2px solid $secondary;
+    }
+    &:last-child {
+      border-bottom: 2px solid $secondary;
+    }
+    .stepMarker {
+      width: 8px;
+      margin: 0 auto;
+      border-bottom: 1px solid $secondary;
+      border-top: 1px solid $secondary;
+      &:first-child {
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.chordSlider {
+  opacity: 0;
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -1px;
+  z-index: -2;
+  background-color: $secondary;
+  transition: opacity 100ms ease-in;
+}
