@@ -80,7 +80,7 @@ export const ChordComponent: FC<ChordProps> = ({ voicing }) => {
   };
   return (
     <div
-      className={`chord-wrapper ${isGrabbed && "grabbed"}`}
+      className={`${style.chordWrapper} ${isGrabbed && style.grabbed}`}
       style={{
         top: `${offsetTop}%`
       }}
@@ -89,7 +89,7 @@ export const ChordComponent: FC<ChordProps> = ({ voicing }) => {
       onMouseUp={stopMoving}
       onMouseMove={moving}
     >
-      <div onMouseDown={play} onMouseUp={stop} className="play-button">
+      <div onMouseDown={play} onMouseUp={stop} className={style.playButton}>
         {step}
       </div>
     </div>

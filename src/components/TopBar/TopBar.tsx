@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import "./TopBar.sass";
+import style from "./TopBar.module.scss";
 
 export const TopBar: FC = () => {
-  return <header className="top-bar">Harpia</header>;
+  return <header className={style.topBar}>Harpia</header>;
 };

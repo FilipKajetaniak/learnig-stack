@@ -30,7 +30,7 @@ export const Markers: FC<MarkerProps> = ({ octaves, steps }) => {
       elements.push(
         <div
           key={i}
-          className="octave-marker"
+          className={style.octaveMarker}
           style={{ height: `${Math.floor(10000 / octaves) / 100}%` }}
         >
           {createStepMarkers()}

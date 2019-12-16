@@ -6,9 +6,7 @@
   float: left;
   position: relative;
   &:hover {
-    .chord-slider,
-    .octave-marker,
-    .step-marker {
+    div {
       opacity: 1;
     }
   }
