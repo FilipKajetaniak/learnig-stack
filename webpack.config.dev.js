@@ -2,6 +2,9 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
+const variablesOverride = require("./antDesignVariablesOverride");
+
+console.log("VARS: ", variablesOverride);
 
 module.exports = merge(base, {
   mode: "development",
@@ -39,6 +42,21 @@ module.exports = merge(base, {
         test: /\.(sa|sc|c)ss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
         exclude: /\.module\.(sa|sc|c)ss$/
+      },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "less-loader",
+            options: {
+              modifyVars: variablesOverride,
+              javascriptEnabled: true
+            }
+          }
+        ]
       },
       {
         test: /\.(ogg|mp3|wav|mpe?g)$/i,

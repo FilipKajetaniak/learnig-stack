@@ -6,6 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
+const variablesOverride = require("./antDesignVariablesOverride");
 
 module.exports = merge(base, {
   mode: "production",
@@ -35,6 +36,42 @@ module.exports = merge(base, {
           },
           "postcss-loader",
           "sass-loader"
+        ],
+        include: /\.module\.(sa|sc|c)ss$/
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === "development"
+            }
+          },
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ],
+        exclude: /\.module\.(sa|sc|c)ss$/
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === "development"
+            }
+          },
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "less-loader",
+            options: {
+              modifyVars: variablesOverride,
+              javascriptEnabled: true
+            }
+          }
         ]
       },
       {

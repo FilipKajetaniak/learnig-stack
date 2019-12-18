@@ -1,7 +1,6 @@
 @import "../../node_modules/normalize.scss/normalize.scss";
 @import "./variables";
 @import "./mixins";
-@import "./vendors";
 
 * {
   box-sizing: border-box;
@@ -25,8 +24,4 @@ html,
 body,
 #app {
   height: 100%;
-}
-
-#app {
-  padding: 0 50px;
 }
