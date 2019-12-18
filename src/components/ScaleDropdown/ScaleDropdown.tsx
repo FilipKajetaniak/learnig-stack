@@ -1,32 +1,28 @@
-import React, { FC, ChangeEvent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { FC } from "react";
 
-import style from "./ScaleDropdown.module.scss";
-import scales from "constants/scales";
-import { changeScale } from "store/scale/actionCreators";
+import { Dropdown } from "components/Dropdown/Dropdown";
 
-interface ScaleDropdownProps {
-  className: string;
-}
+export const ScaleDropdown: FC = () => {
+  const options = [
+    {
+      key: "major",
+      value: "Major"
+    },
+    {
+      key: "minor",
+      value: "Minor"
+    }
+  ];
 
-export const ScaleDropdown: FC<ScaleDropdownProps> = ({ className }) => {
-  const dispatch = useDispatch();
-  const selectedScale = useSelector((state: any) => state.scale.scale);
-  const selectScale = (event: ChangeEvent<HTMLSelectElement>) =>
-    dispatch(changeScale(event.target.value.toString()));
+  const onSelect = (key: string) => {
+    console.log(key);
+  };
 
   return (
-    <select
-      name="Scale"
-      className={className}
-      onChange={selectScale}
-      value={selectedScale}
-    >
-      {Object.keys(scales).map(scale => (
-        <option key={scale} value={scale}>
-          {scale}
-        </option>
-      ))}
-    </select>
+    <Dropdown
+      options={options}
+      selectedValue={options[0]}
+      onSelect={onSelect}
+    />
   );
 };
