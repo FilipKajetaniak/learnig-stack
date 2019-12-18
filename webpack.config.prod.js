@@ -6,6 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
+const variablesOverride = require("./antDesignVariablesOverride");
 
 module.exports = merge(base, {
   mode: "production",
@@ -67,6 +68,7 @@ module.exports = merge(base, {
           {
             loader: "less-loader",
             options: {
+              modifyVars: variablesOverride,
               javascriptEnabled: true
             }
           }

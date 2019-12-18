@@ -2,6 +2,9 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
+const variablesOverride = require("./antDesignVariablesOverride");
+
+console.log("VARS: ", variablesOverride);
 
 module.exports = merge(base, {
   mode: "development",
@@ -49,6 +52,7 @@ module.exports = merge(base, {
           {
             loader: "less-loader",
             options: {
+              modifyVars: variablesOverride,
               javascriptEnabled: true
             }
           }
