@@ -41,6 +41,20 @@ module.exports = merge(base, {
         exclude: /\.module\.(sa|sc|c)ss$/
       },
       {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "less-loader",
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ]
+      },
+      {
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
         loader: "file-loader",
         options: {
