@@ -4,8 +4,6 @@ const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
 const variablesOverride = require("./antDesignVariablesOverride");
 
-console.log("VARS: ", variablesOverride);
-
 module.exports = merge(base, {
   mode: "development",
   devtool: "source-map",
